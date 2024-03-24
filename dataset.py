@@ -13,7 +13,7 @@ class ClosePriceDataset(Dataset):
         return len(self.data) - self.sequence_length + 1
 
     def __getitem__(self, index):
-        random_start = np.random.randint(0, len(self.data) - self.sequence_length)
+        random_start = np.random.randint(0, len(self.data) - self.sequence_length + 1)
         sample = self.data[random_start:random_start + self.sequence_length]
 
         train_sample = sample[:int(self.number_of_training)]
