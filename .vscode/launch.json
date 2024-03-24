@@ -18,7 +18,7 @@
             "program": "eval.py",
             "console": "integratedTerminal",
             "args": [
-                "--model", "./model.pth",
+                "--model", "./model(lr=0.0001 epoch=150).pth",
                 "--dataset", "./dataset/eval.csv"
             ]
         },
@@ -29,10 +29,10 @@
             "program": "train.py",
             "console": "integratedTerminal",
             "args": [
-                "--model", "./model.pth",
+                "--model", "./model(lr=0.0001 epoch=150).pth",
                 "--dataset", "./dataset/0050.TW close.csv",
-                "--lr", "0.001", 
-                "--epochs", "100"
+                "--lr", "0.0001", 
+                "--epochs", "150"
             ]
         }
     ]
