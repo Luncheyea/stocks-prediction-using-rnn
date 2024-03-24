@@ -1,8 +1,15 @@
-# The csv file path of training data
+# The csv file path of dataset
 dataset_path = './dataset/0050.TW close.csv'
 
-# The path for saved model
+# The path of saved model
 saved_model_path = './model.pth'
+
+# Epochs
+epochs = 100
+
+# Learning rate
+lr = 0.001
+
 
 # The number of consecutive training data in each epoch
 sequence_length = 30
@@ -13,9 +20,3 @@ sequence_length = 30
 number_of_training = 25
 assert number_of_training < sequence_length, \
     '`config.number_of_training` should not be greater than or equal to `config.sequence_length`'
-
-# Epoch
-epochs = 10
-
-# Learning rate
-lr = 0.001

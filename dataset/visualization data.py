@@ -31,7 +31,7 @@ def plotData(file_path):
     plt.show()
 
 # Specify the path to the file
-file_path = './dataset/train'
+file_path = './dataset/split'
 # file_path = './dataset/test'
 
 # List all .csv files in the directory
@@ -39,5 +39,6 @@ files = os.listdir(file_path)
 csv_files = [file for file in files if file.endswith('.csv')]
 
 # Call the function to read the file and plot the data
-for i in range(1, len(csv_files) + 1):
-    plotData(f"{file_path}/{i}.csv")
+plotData(f"{file_path}/{1}.csv")
+# for i in range(1, len(csv_files) + 1):
+#     plotData(f"{file_path}/{i}.csv")

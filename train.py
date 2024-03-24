@@ -1,17 +1,23 @@
+import model
+import dataset
+import config
+
+import argparse
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import pandas as pd
-import numpy as np
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader
 
-import config
-import dataset
-import model
+# Parse the command line arguments
+parser = argparse.ArgumentParser(description='Evaluate the rnn model for stocks prediction.')
+parser.add_argument('-d', '--dataset', type=str, default=config.dataset_path, help='The csv file path of dataset')
+parser.add_argument('-m', '--model', type=str, default=config.saved_model_path, help='The path of saved model')
+parser.add_argument('-l', '--lr', type=float, default=config.lr, help='Learning rate')
+parser.add_argument('-e', '--epochs', type=int, default=config.epochs, help='Epochs')
+args = parser.parse_args()
 
 # Check for GPU availability
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print(f"Run on {device}\n")
 
 def saveModel(model, path):
   # Save the model
@@ -59,15 +65,22 @@ def test(model, criterion, data_loader):
 
 
 if __name__ == '__main__':
-    dataset = dataset.ClosePriceDataset(config.dataset_path)
-    data_loader = DataLoader(dataset, batch_size=1, shuffle=True)
+    print(f"Run on {device}\n")
+    print(f"dataset: {args.dataset}")
+    print(f"model: {args.model}")
+    print(f"lr: {args.lr}")
+    print(f"epochs: {args.epochs}")
+    print("==========")
+    
+    close_price_dataset = dataset.ClosePriceDataset(args.dataset)
+    data_loader = DataLoader(close_price_dataset, batch_size=1, shuffle=True)
     rnn_model = model.RNNModel()
 
     # Optimizer
-    optimizer = optim.Adam(rnn_model.parameters(), lr=config.lr)
+    optimizer = optim.Adam(rnn_model.parameters(), lr=args.lr)
     # MSE Loss Function
     criterion = nn.MSELoss()
 
-    # Execute training and validating
-    trainer(rnn_model, criterion, optimizer, data_loader, config.epochs, config.saved_model_path)
+    # Execute training and testing
+    trainer(rnn_model, criterion, optimizer, data_loader, args.epochs, args.model)
     test(rnn_model, criterion, data_loader)
