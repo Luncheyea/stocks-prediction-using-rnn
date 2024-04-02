@@ -55,7 +55,7 @@ def splitFileWithOverlap(file_path, saved_folder_path, items_per_file=60, overla
 
 # Splitting the file and getting the paths of the new files
 saved_folder_path = './dataset/split'
-file_path = './dataset/0050.TW close.csv'
+file_path = './dataset/0050.TW.csv'
 new_file_paths = splitFileWithOverlap(file_path, saved_folder_path, 30, 5)
 
 # Print the paths for confirmation

@@ -1,5 +1,5 @@
 # The csv file path of dataset
-dataset_path = './dataset/0050.TW close.csv'
+dataset_path = './dataset/0050.TW.csv'
 
 # The path of saved model
 saved_model_path = './model.pth'

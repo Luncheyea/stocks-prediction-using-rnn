@@ -14,7 +14,7 @@ For more detailed insights, the technical report associated with this project is
 
 ```shell
 python train.py --model "./model(lr=0.0001 epoch=150).pth" \
-      --dataset "./dataset/0050.TW close.csv" --lr 0.0001 --epochs 150 
+      --dataset "./dataset/0050.TW.csv" --lr 0.0001 --epochs 150 
 ```
 
 ## Evaluation
