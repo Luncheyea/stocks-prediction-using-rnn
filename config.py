@@ -5,10 +5,10 @@ dataset_path = './dataset/0050.TW.csv'
 saved_model_path = './model.pth'
 
 # Epochs
-epochs = 100
+epochs = 150
 
 # Learning rate
-lr = 0.001
+lr = 0.0001
 
 
 # The number of consecutive training data in each epoch
