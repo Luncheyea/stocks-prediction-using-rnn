@@ -1,14 +1,14 @@
 # Stocks Prediction Using RNN
 
-This project was developed as part of the Artificial Neural Network course within the Department of CSIE at National Taiwan Normal University. Its primary objective is to utilize neural networks for the prediction of the 0050.TW stock index.<br>
-For more detailed insights, the technical report associated with this project is available [[here](Stocks_Prediction_Using_RNN.pdf)].<br>
+This project was developed as part of the Artificial Neural Network course within the Department of CSIE at National Taiwan Normal University during the Spring semester, 2024.<br>
+Its primary objective is to utilize neural networks for the prediction of the 0050.TW stock index. For more detailed insights, the technical report associated with this project is available [[here](Stocks_Prediction_Using_RNN.pdf)].<br>
 
 ## Prerequisites
 
-- Python >= 3.10.14
-- pandas >= 2.2.1
-- Matplotlib >= 3.8.3
-- PyTorch >= 2.2.1
+- Python == 3.10.14
+- PyTorch == 2.2.1
+- pandas == 2.2.1
+- Matplotlib == 3.8.3
 
 ## Training
 
